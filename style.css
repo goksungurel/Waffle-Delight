@@ -43,6 +43,13 @@ nav a {
     height: 200px;
     border-radius: 10px;
 }
+#iletisim {
+    background-color: #16c5a6;
+    padding: 40px;
+    margin-top:60px;
+    border-radius: 10px;
+}
+
 
 footer {
     text-align: center;
