@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waffle Delight</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Stil dosyan (opsiyonel) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand" href="#">Waffle Delight</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Anasayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Menü</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Hakkımızda</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-warning text-center p-5">
+    <div class="container">
+        <h1 class="display-4">Taze ve Lezzetli Waffle'lar</h1>
+        <p class="lead">Her gün taptaze malzemelerle hazırlanır!</p>
+        <a href="#siparis" class="btn btn-danger btn-lg">Sipariş Ver</a>
+
+    </div>
+</section>
+
+<!-- Menü Bölümü -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Menümüz</h2>
+    <div class="row justify-content-center">
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://image.hurimg.com/i/hurriyet/75/750x422/5f5255dbd3806c209020ff2f.jpg"
+                     class="card-img-top"
+                     alt="Çilekli Waffle">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Çilekli Muzlu Waffle</h5>
+                    <p class="card-text">105₺</p>
+                    <a href="#" class="btn btn-outline-danger">Sipariş Et</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY-9sMBX1EiR1ewNlPsKQJJIcBKDWu_kSrEDiYO6n-0sOJrOu6099t6VlA8Fgl7VUead0&usqp=CAU"
+                class="card-img-top"
+                alt="Belçika Çikolatalı  Waffle">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Belçika Çikolatalı Waffle</h5>
+                    <p class="card-text">165₺</p>
+                    <a href="#" class="btn btn-outline-danger">Sipariş Et</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/d7/30/6a/bubble-waffles-the-best.jpg"
+                     class="1card-img-top"
+                     alt="Bubble Waffle">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Bubble Waffle</h5>
+                    <p class="card-text">200₺</p>
+                    <a href="#" class="btn btn-outline-danger">Sipariş Et</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Sipariş Formu Başlangıç -->
+<section id="siparis" class="container my-5">
+    <h2 class="text-center mb-4">Sipariş Formu</h2>
+    <form class="w-50 mx-auto">
+        <div class="mb-3">
+            <label for="name" class="form-label">Adınız Soyadınız</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="waffle" class="form-label">Waffle Seçimi</label>
+            <select class="form-select" id="waffle">
+                <option>Çilekli Muzlu Waffle</option>
+                <option>Belçika Çikolatalı Waffle</option>
+                <option>Bubble Waffle</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="note" class="form-label">Ekstra Not</label>
+            <textarea class="form-control" id="note" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Gönder</button>
+    </form>
+    <div id="thankYouMessage" class="text-success text-center mt-4" style="display: none;">
+        Teşekkürler! Siparişiniz alınmıştır. 💌
+    </div>
+
+</section>
+<!-- Sipariş Formu Bitiş -->
+
+<!-- Footer -->
+<footer class="bg-danger text-white text-center py-3">
+    <p>© 2025 Waffle Delight - Tüm hakları saklıdır.</p>
+</footer>
+
+<!-- Bootstrap JS (navbar için gerekli) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Sayfa yenilenmesin
+            thankYouMessage.style.display = 'block'; // Mesajı göster
+            form.reset(); // Formu temizle
+        });
+    });
+</script>
+
+</html>
